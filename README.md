@@ -13,4 +13,6 @@ The application serves a simple API that provides a hardcoded list of phonebook 
 
 ## Middleware
 
-Morgan Logging: The application uses Morgan middleware to log HTTP requests in the console. It is configured with the tiny format to provide concise output for each request.
+Morgan middleware is configured to log HTTP requests in the console using the tiny format. Additionally, for POST requests, the request body is logged to the console. Example log for a POST request:
+
+```POST /api/persons 200 120 - 10.000 ms {"name":"Test User","number":"123-456"}```
