@@ -6,29 +6,7 @@ This repository contains the backend implementation for a phonebook application 
 
 The application serves a simple API that provides a hardcoded list of phonebook entries. The API is available at the following endpoint:
 - `GET /api/persons`: Returns a list of persons in JSON format.
-
-Example response:
-```json
-[
-  {
-    "id": "1",
-    "name": "Arto Hellas",
-    "number": "040-123456"
-  },
-  {
-    "id": "2",
-    "name": "Ada Lovelace",
-    "number": "39-44-5323523"
-  },
-  {
-    "id": "3",
-    "name": "Dan Abramov",
-    "number": "12-43-234345"
-  },
-  {
-    "id": "4",
-    "name": "Mary Poppendieck",
-    "number": "39-23-6423122"
-  }
-]
-```
+- `GET /info`: Returns information about the phonebook, including the total number of entries and the current server time.
+- `GET /api/persons/:id`: Returns the information of a single person based on the ID. If the ID is not found, a 404 error is returned.
+- `DELETE /api/persons/:id`: Deletes a single phonebook entry based on the ID. Responds with `204 No Content` if the entry is successfully deleted. Returns `204 No Content` if the ID is not found.
+- `POST /api/persons`: Adds a new phonebook entry. Expects a JSON body with `name` and `number`. If either field is missing, or if the name is not unique, the server responds with a 400 Bad Request error. The newly added entry is returned in the response.
