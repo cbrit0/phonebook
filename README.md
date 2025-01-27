@@ -10,3 +10,7 @@ The application serves a simple API that provides a hardcoded list of phonebook 
 - `GET /api/persons/:id`: Returns the information of a single person based on the ID. If the ID is not found, a 404 error is returned.
 - `DELETE /api/persons/:id`: Deletes a single phonebook entry based on the ID. Responds with `204 No Content` if the entry is successfully deleted. Returns `204 No Content` if the ID is not found.
 - `POST /api/persons`: Adds a new phonebook entry. Expects a JSON body with `name` and `number`. If either field is missing, or if the name is not unique, the server responds with a 400 Bad Request error. The newly added entry is returned in the response.
+
+## Middleware
+
+Morgan Logging: The application uses Morgan middleware to log HTTP requests in the console. It is configured with the tiny format to provide concise output for each request.
