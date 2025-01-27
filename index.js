@@ -51,12 +51,17 @@ app.get('/api/persons', (request, response, next) => {
 		.catch(error => next(error))
 });
 
-app.get('/info', (request, response) => {
+app.get('/info', (request, response, next) => {
 	const requestTime = new Date()
-	response.send(`
-		<p>Phonebook has info for ${persons.length} people</p>
-		<p>Request received at: ${requestTime}</p>
-	`);
+
+	Person.countDocuments({})
+		.then(count => {
+			response.send(`
+				<p>Phonebook has info for ${count} people</p>
+				<p>Request received at: ${requestTime}</p>
+			`);
+		})
+		.catch(error => next(error))
 })
 
 app.get('/api/persons/:id', (request, response, next) => {
