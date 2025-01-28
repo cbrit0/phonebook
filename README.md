@@ -31,3 +31,11 @@ The application has been deployed using [Fly.io](https://fly.io/). You can acces
 The application is integrated with MongoDB Atlas for storing phonebook entries.
 
 To connect to the database, the `MONGODB_URI` environment variable must be set with the connection string provided by MongoDB Atlas.
+
+## ESLint
+
+The project uses ESLint to ensure code quality and consistency. To check for linting issues, run the following command:
+
+```bash
+npm run lint
+```
