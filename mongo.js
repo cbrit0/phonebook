@@ -1,11 +1,11 @@
 const mongoose = require('mongoose')
 
-const [password, name, number] = process.argv.slice(2);
+const [password, name, number] = process.argv.slice(2)
 
 if (!password) {
-    console.log('give password as argument')
-    process.exit(1)
-  }
+  console.log('give password as argument')
+  process.exit(1)
+}
 
 const url =
   `mongodb+srv://cristobalbritop:${password}@fullstack-open.a5jqd.mongodb.net/phonebookApp?retryWrites=true&w=majority&appName=fullstack-open`
