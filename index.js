@@ -6,8 +6,6 @@ const Person = require('./models/person')
 
 const app = express()
 
-const PORT = process.env.PORT
-
 app.use(express.static('dist'))
 app.use(cors())
 app.use(express.json())
@@ -110,6 +108,4 @@ const errorHandler = (error, request, response, next) => {
 
 app.use(errorHandler)
 
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`)
-})
+module.exports = app
