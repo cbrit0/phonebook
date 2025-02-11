@@ -24,6 +24,8 @@ jobs:
       - name: Check style
         run: npm run lint
 
+      - run: |
+          echo "MONGODB_URI=${{ secrets.MONGODB_URI }}" >> .env
       - run: npm test
 
       - uses: superfly/flyctl-actions/setup-flyctl@master
